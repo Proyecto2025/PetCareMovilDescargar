@@ -1,0 +1,219 @@
+<resources>
+    <string name="app_name">PetCare</string>
+
+    <string name="contactar">Contactar</string>
+    <!-- Components -->
+    <string name="bottom_post">Post</string>
+    <string name="bottom_publish">Publicar</string>
+
+    <string name="detail_ubicacion">Ubicación: %1$s</string>
+    <string name="detail_datos_extra">Datos Extra</string>
+    <string name="detail_pertenencias">Pertenencias</string>
+
+    <string name="filter_filtrar">Filtrar</string>
+
+    <string name="item_ubicacion">Ubicación</string>
+
+    <string name="ubicacion_sin">Sin ubicación</string>
+    <string name="ubicacion_buscar">Buscar por ubicación...</string>
+    <string name="ubicacion_limpiar">Limpiar ubicación</string>
+
+    <!-- Categorías -->
+    <string name="categoria_todo">TODO</string>
+    <string name="categoria_comida">COMIDA</string>
+    <string name="categoria_higiene">HIGIENE</string>
+    <string name="categoria_accesorios">ACCESORIOS</string>
+
+    <!-- Pantalla de consejos -->
+    <string name="titulo_consejos">Consejos</string>
+    <string name="mensaje_no_consejos">No hay consejos</string>
+    <string name="error_cargar_consejo">No se pudo cargar el consejo</string>
+    <string name="error_cargar_post">No se pudo cargar el post</string>
+
+    <!-- Login -->
+    <string name="login_titulo">Iniciar Sesión</string>
+    <string name="login_usuario">Usuario</string>
+    <string name="login_contrasena">Contraseña</string>
+    <string name="login_mantener_sesion">Mantener sesión iniciada</string>
+    <string name="login_aceptar_terminos">Acepto los Términos y Condiciones</string>
+    <string name="login_ingresar">Ingresar</string>
+    <string name="login_no_cuenta">¿No tienes cuenta?</string>
+    <string name="login_crea_una">¡Crea una!</string>
+
+    <!-- Errores -->
+    <string name="error_aceptar_terminos">Debes aceptar los términos y condiciones</string>
+
+
+    <!-- Pantalla de datos personales -->
+    <string name="perfil_volver">&lt; Volver</string>
+    <string name="perfil_titulo">Datos Personales</string>
+
+    <!-- Labels -->
+    <string name="perfil_nombre">Nombre</string>
+    <string name="perfil_usuario">Nombre de usuario</string>
+    <string name="perfil_telefono">Número de teléfono</string>
+    <string name="perfil_correo">Correo</string>
+
+    <!-- Botón -->
+    <string name="perfil_confirmar">Confirmar</string>
+
+    <!-- Errores -->
+    <string name="perfil_error_cargar">Error al cargar datos</string>
+    <string name="perfil_error_nombre_vacio">El nombre no puede estar vacío</string>
+    <string name="perfil_error_usuario_vacio">El usuario no puede estar vacío</string>
+    <string name="perfil_error_telefono_invalido">Teléfono inválido</string>
+    <string name="perfil_error_correo_invalido">Correo inválido</string>
+
+    <!-- Pantalla de posts -->
+    <string name="postlist_titulo">Publicaciones</string>
+    <string name="postlist_vacio">No hay posts</string>
+
+    <!-- Categorías específicas de posts -->
+    <string name="categoria_adopcion">ADOPCION</string>
+    <string name="categoria_ayuda">AYUDA</string>
+    <string name="categoria_extravio">EXTRAVIO</string>
+
+    <!-- Animales -->
+    <string name="animal_perro">PERRO</string>
+    <string name="animal_gato">GATO</string>
+
+    <!-- ProfileScreen -->
+    <string name="perfil_titulo_pantalla">Perfil</string>
+
+    <!-- Drawer -->
+    <string name="perfil_seguridad">Seguridad</string>
+    <string name="perfil_cambiar_datos">Cambiar datos personales</string>
+    <string name="perfil_cerrar_sesion">Cerrar sesión</string>
+    <string name="perfil_eliminar_cuenta">Eliminar cuenta</string>
+
+    <!-- Contadores -->
+    <string name="perfil_num_posts">%1$d posts</string>
+    <string name="perfil_num_advices">%1$d advice</string>
+
+    <!-- Mensajes vacíos -->
+    <string name="perfil_vacio_adopcion">Aún no hay adopciones</string>
+    <string name="perfil_vacio_extravio">Aún no hay extravíos</string>
+    <string name="perfil_vacio_ayuda">Aún no hay ayudas</string>
+    <string name="perfil_vacio_consejo">Aún no hay consejos</string>
+    <string name="perfil_vacio_publicaciones">Aún no hay publicaciones</string>
+
+    <!-- Diálogo eliminar -->
+    <string name="perfil_dialogo_eliminar_titulo">Eliminar publicación</string>
+    <string name="perfil_dialogo_eliminar_texto">¿Seguro que quieres eliminar esta publicación?</string>
+    <string name="perfil_dialogo_eliminar_confirmar">Eliminar</string>
+    <string name="perfil_dialogo_eliminar_cancelar">Cancelar</string>
+
+    <!-- PublishScreen -->
+    <string name="publish_titulo_post">POST</string>
+    <string name="publish_titulo_consejo">CONSEJO</string>
+
+    <!-- Botones -->
+    <string name="publish_atras">Atrás</string>
+    <string name="publish_cancelar">Cancelar</string>
+    <string name="publish_siguiente">Siguiente</string>
+    <string name="publish_publicar">Publicar</string>
+
+    <!-- Paso 1 -->
+    <string name="publish_tipo_publicacion">Tipo de Publicación</string>
+    <string name="publish_tipo_animal">Tipo de Animal</string>
+    <string name="publish_titulo_post_label">Título del Post</string>
+    <string name="publish_titulo_post_placeholder">Escribe título del post...</string>
+
+    <string name="publish_provincia">Provincia del Post</string>
+    <string name="publish_provincia_placeholder">Escribe la provincia...</string>
+
+    <string name="publish_municipio">Municipio del Post</string>
+    <string name="publish_municipio_placeholder">Escribe el municipio...</string>
+
+    <string name="publish_tipo_consejo">Tipo de consejo</string>
+    <string name="publish_titulo_consejo_label">Título del Consejo</string>
+    <string name="publish_titulo_consejo_placeholder">Escribe título del consejo...</string>
+    <string name="publish_subtitulo">Subtítulo</string>
+    <string name="publish_subtitulo_placeholder">Escribe subtítulo...</string>
+
+    <!-- Paso 2 -->
+    <string name="publish_descripcion_corta">Descripción corta</string>
+    <string name="publish_descripcion_larga">Descripción larga</string>
+
+    <!-- Paso 3 -->
+    <string name="publish_detalles_extra_titulo">Detalles extra (opcional)</string>
+    <string name="publish_detalles_extra_label">Detalles extra</string>
+
+    <!-- Paso 4 -->
+    <string name="publish_no_aplica">Este paso no aplica para este tipo de publicación.</string>
+    <string name="publish_donar_pertenencias">¿Deseas donar pertenencias?</string>
+    <string name="publish_si">Sí</string>
+    <string name="publish_no">No</string>
+    <string name="publish_pertenencias_label">Pertenencias a donar</string>
+    <string name="publish_pertenencias_placeholder">Separa con comas</string>
+
+    <!-- Paso 5 -->
+    <string name="publish_seleccionar_imagen">Seleccionar imagen</string>
+    <string name="publish_no_imagen">No se ha seleccionado ninguna imagen</string>
+    <string name="publish_elegir_imagen">Elegir imagen</string>
+
+    <!-- RegisterScreen -->
+    <string name="register_titulo">Registrarse</string>
+
+    <string name="register_nombre_completo">Nombre Completo</string>
+    <string name="register_usuario">Nombre de usuario</string>
+    <string name="register_telefono">Número de teléfono</string>
+    <string name="register_correo">Correo Electrónico</string>
+    <string name="register_contrasena">Contraseña</string>
+    <string name="register_confirmar_contrasena">Confirmar Contraseña</string>
+
+    <string name="register_mantener_sesion">Mantener sesión iniciada</string>
+
+    <string name="register_boton">Registrarse</string>
+
+    <!-- SecurityScreen -->
+    <string name="security_cambiar_contrasena">Cambiar contraseña</string>
+    <string name="security_confirmar_contrasena">Confirmar contraseña</string>
+    <string name="security_error_no_coinciden">Las contraseñas no coinciden</string>
+    <string name="security_boton_confirmar">Confirmar</string>
+
+
+    <!-- TermsAndConditionsScreen -->
+    <string name="terms_titulo">Términos y Condiciones</string>
+    <string name="terms_volver">Volver</string>
+
+    <string name="terms_texto">
+        TÉRMINOS Y CONDICIONES DE USO\n\n
+        Última actualización: Enero 2025\n\n
+        Bienvenido/a a PetCare. Al crear una cuenta o utilizar nuestros servicios, aceptas cumplir estos Términos y Condiciones. Te recomendamos leerlos detenidamente.\n\n
+        1. ACEPTACIÓN DE LOS TÉRMINOS\n
+        Al registrarte, acceder o usar PetCare, confirmas que has leído y aceptado estos Términos y nuestra Política de Privacidad. Si no estás de acuerdo, no debes utilizar la aplicación.\n\n
+        2. USO DE LA PLATAFORMA\n
+        PetCare es una plataforma destinada a compartir publicaciones, consejos y contenido relacionado con el cuidado y bienestar de mascotas. Te comprometes a:\n
+        - Proporcionar información veraz y actualizada.\n
+        - No suplantar a otras personas.\n
+        - No utilizar la plataforma para actividades ilegales, engañosas o dañinas.\n\n
+        3. CONTENIDO DEL USUARIO\n
+        Eres responsable del contenido que publiques. Al subir contenido, declaras que:\n
+        - Tienes los derechos necesarios para publicarlo.\n
+        - No infringe derechos de terceros.\n
+        - No contiene material ofensivo, violento, discriminatorio o inapropiado.\n\n
+        Nos reservamos el derecho de eliminar contenido que incumpla estas normas.\n\n
+        4. PRIVACIDAD Y DATOS PERSONALES\n
+        Tu privacidad es importante. Recopilamos y tratamos tus datos según nuestra Política de Privacidad.\n\n
+        5. SEGURIDAD DE LA CUENTA\n
+        Eres responsable de mantener la confidencialidad de tu contraseña.\n\n
+        6. PROHIBICIONES\n
+        No está permitido:\n
+        - Publicar contenido falso o engañoso.\n
+        - Realizar spam.\n
+        - Subir malware.\n
+        - Acosar o amenazar a otros usuarios.\n\n
+        7. MODIFICACIONES DEL SERVICIO\n
+        Podemos actualizar o modificar la aplicación.\n\n
+        8. CANCELACIÓN Y ELIMINACIÓN DE CUENTA\n
+        Puedes eliminar tu cuenta en cualquier momento.\n\n
+        9. LIMITACIÓN DE RESPONSABILIDAD\n
+        PetCare no se hace responsable del contenido publicado por los usuarios ni de daños derivados del uso incorrecto de la app.\n\n
+        10. CONTACTO\n
+        Si tienes dudas, contacta con soporte desde la app.\n\n
+        Al continuar utilizando PetCare, confirmas que aceptas estos Términos y Condiciones.
+    </string>
+
+
+</resources>
