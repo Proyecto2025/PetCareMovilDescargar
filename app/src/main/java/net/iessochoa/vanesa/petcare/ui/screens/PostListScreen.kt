@@ -110,6 +110,7 @@ fun PostListScreen(
             modifier = Modifier
                 .fillMaxWidth()
                 .weight(1f)
+                .padding(bottom = 90.dp)
         ) {
 
             //SPINNER DE CARGA

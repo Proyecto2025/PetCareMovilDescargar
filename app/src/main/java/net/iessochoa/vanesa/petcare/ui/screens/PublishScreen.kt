@@ -107,7 +107,8 @@ fun PublishScreen(
         Spacer(Modifier.height(20.dp))
 
         Row(
-            modifier = Modifier.fillMaxWidth(),
+            modifier = Modifier.fillMaxWidth()
+                .padding(bottom = 90.dp),
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
 

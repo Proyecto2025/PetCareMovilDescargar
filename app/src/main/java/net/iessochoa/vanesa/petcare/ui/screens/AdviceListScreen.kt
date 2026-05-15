@@ -66,7 +66,10 @@ fun AdviceListScreen(
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        Box(modifier = Modifier.fillMaxSize()) {
+        Box(modifier = Modifier
+            .fillMaxSize()
+            .padding(bottom = 90.dp)
+        ) {
 
             //Mostrar spinner mientras carga
             if (uiState.isLoading) {
