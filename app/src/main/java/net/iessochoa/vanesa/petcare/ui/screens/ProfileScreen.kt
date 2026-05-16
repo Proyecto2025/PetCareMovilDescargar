@@ -36,6 +36,7 @@ fun ProfileScreen(
     passwordChanged: Boolean = false, //Flag
     dataChanged: Boolean = false, //Flag
     onPostSelected: (PerfilPostAndAdviceDto) -> Unit,
+    onAdviceSelected: (PerfilPostAndAdviceDto) -> Unit,
     onCambiarDatos: () -> Unit,
     onSeguridad: () -> Unit,
     onEliminarCuenta: () -> Unit,
@@ -322,14 +323,22 @@ fun ProfileScreen(
                             )
                         } else {
 
-                            LazyColumn {
+                            LazyColumn (
+                                contentPadding = PaddingValues(bottom = 90.dp)
+                            ) {
                                 items(listaFiltrada) { item ->
 
                                     var mostrarDialogo by remember { mutableStateOf(false) }
+                                    val esConsejo = (filtro == CategoriaPost.CONSEJO)
 
                                     ProfileItemCard(
                                         item = item,
-                                        onClick = { onPostSelected(item) },
+                                        onClick = {
+                                            if (esConsejo)
+                                                onAdviceSelected(item)
+                                            else
+                                                onPostSelected(item)
+                                        },
                                         onDelete = {
                                             mostrarDialogo = true
                                         }

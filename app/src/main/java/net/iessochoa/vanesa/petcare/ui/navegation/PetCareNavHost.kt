@@ -115,18 +115,14 @@ fun PetCareNavHost(
 
                 val id = backStackEntry.arguments?.getString("id")!!.toLong()
 
-                val parentEntry = remember(backStackEntry) {
-                    navController.getBackStackEntry(AdviceDestination.route)
-                }
-
-                val adviceViewModel: AdviceViewModel =
-                    viewModel(parentEntry)
+                val adviceViewModel: AdviceViewModel = viewModel()
 
                 DetailAdviceScreen(
                     adviceId = id,
                     onBack = { navController.popBackStack() }
                 )
             }
+
 
 
 
@@ -208,6 +204,9 @@ fun PetCareNavHost(
                     dataChanged = dataChanged,
                     onPostSelected = { post ->
                         navController.navigate("${DetailPostDestination.route}/${post.id}")
+                    },
+                    onAdviceSelected = { advice ->
+                        navController.navigate("${DetailAdviceDestination.route}/${advice.id}")
                     },
                     onCambiarDatos = {
                         navController.navigate(ChangeDataDestination.route)
