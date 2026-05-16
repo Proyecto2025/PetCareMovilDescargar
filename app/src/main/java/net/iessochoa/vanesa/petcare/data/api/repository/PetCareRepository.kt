@@ -18,12 +18,12 @@ import retrofit2.Response
 import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import android.graphics.Matrix
+import android.media.ExifInterface
 import android.net.Uri
 import com.google.gson.Gson
-import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
-import okhttp3.RequestBody
 import okhttp3.RequestBody.Companion.toRequestBody
 import retrofit2.converter.gson.GsonConverterFactory
 import java.io.ByteArrayOutputStream
@@ -65,30 +65,57 @@ object PetCareRepository {
         )
     }
 
-
-    //Reducir el tamaño de las imagenes para q no de HTTP 413
+    //Reducir el tamaño de las imágenes y corregir orientación para evitar HTTP 413 y fotos giradas
     private fun compressImage(context: Context, uri: Uri): ByteArray {
+
+        //Leer bitmap original
         val inputStream = context.contentResolver.openInputStream(uri)
         val originalBitmap = BitmapFactory.decodeStream(inputStream)
 
-        // Redimensionar a máximo 1080px (como Instagram)
-        val maxSize = 1080
-        val ratio = min(
-            maxSize.toFloat() / originalBitmap.width,
-            maxSize.toFloat() / originalBitmap.height
+        //Leer EXIF para saber si la imagen está girada
+        val exif = ExifInterface(context.contentResolver.openInputStream(uri)!!)
+        val orientation = exif.getAttributeInt(
+            ExifInterface.TAG_ORIENTATION,
+            ExifInterface.ORIENTATION_NORMAL
         )
 
-        val width = (originalBitmap.width * ratio).toInt()
-        val height = (originalBitmap.height * ratio).toInt()
+        val matrix = Matrix()
 
-        val resizedBitmap = Bitmap.createScaledBitmap(originalBitmap, width, height, true)
+        when (orientation) {
+            ExifInterface.ORIENTATION_ROTATE_90 -> matrix.postRotate(90f)
+            ExifInterface.ORIENTATION_ROTATE_180 -> matrix.postRotate(180f)
+            ExifInterface.ORIENTATION_ROTATE_270 -> matrix.postRotate(270f)
+        }
 
-        // Comprimir a JPEG 70%
+        //Crear bitmap corregido
+        val correctedBitmap = Bitmap.createBitmap(
+            originalBitmap,
+            0, 0,
+            originalBitmap.width,
+            originalBitmap.height,
+            matrix,
+            true
+        )
+
+        //Redimensionar a máximo 1080px (como Instagram)
+        val maxSize = 1080
+        val ratio = min(
+            maxSize.toFloat() / correctedBitmap.width,
+            maxSize.toFloat() / correctedBitmap.height
+        )
+
+        val width = (correctedBitmap.width * ratio).toInt()
+        val height = (correctedBitmap.height * ratio).toInt()
+
+        val resizedBitmap = Bitmap.createScaledBitmap(correctedBitmap, width, height, true)
+
+        //Comprimir a JPEG 70%
         val outputStream = ByteArrayOutputStream()
         resizedBitmap.compress(Bitmap.CompressFormat.JPEG, 70, outputStream)
 
         return outputStream.toByteArray()
     }
+
 
     //User
     suspend fun login(body: LoginUserDtoReq): LoginUserDto? {
