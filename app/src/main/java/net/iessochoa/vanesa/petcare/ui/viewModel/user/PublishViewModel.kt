@@ -201,7 +201,6 @@ class PublishViewModel(
                     state.tipoPublicacion.isNotBlank() &&
                             state.tipoAnimal.isNotBlank() &&
                             state.titulo.isNotBlank() &&
-                            state.subtitulo.trim().isNotEmpty() &&
                             state.provincia.isNotBlank() &&
                             state.municipio.isNotBlank()
                 } else {
@@ -227,7 +226,8 @@ class PublishViewModel(
                 } else true
             }
 
-            5 -> state.imagen != null
+            5 -> state.imagen != null &&
+                 state.subtitulo.trim().isNotEmpty()
 
             else -> true
         }

@@ -129,7 +129,10 @@
     <string name="publish_titulo_consejo_label">Título del Consejo</string>
     <string name="publish_titulo_consejo_placeholder">Escribe título del consejo...</string>
     <string name="publish_subtitulo">Subtítulo</string>
-    <string name="publish_subtitulo_placeholder">Escribe subtítulo...</string>
+    <string name="publish_subtitulo_placeholder">
+    Escribe un subtítulo que describa la imagen (ej: “Gato negro mirando por la ventana”)
+    </string>
+
 
     <!-- Paso 2 -->
     <string name="publish_descripcion_corta">Descripción corta</string>

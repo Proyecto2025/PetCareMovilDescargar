@@ -46,7 +46,6 @@ fun PublishScreen(
     )
 
     val uiState = viewModel.uiState.collectAsState().value
-    val isKeyboardOpen by rememberKeyboardState()
 
     //Si ya se publicó navega
     if (uiState.publicado) {
@@ -177,7 +176,6 @@ fun Paso1(
 
     //Límites del backend
     val maxTitle = 60
-    val maxSubtitle = 60
 
     Column(verticalArrangement = Arrangement.spacedBy(20.dp)) {
 
@@ -301,18 +299,6 @@ fun Paso1(
                     )
                 }
             }
-
-            //SUBTÍTULO
-            LabelRequired(stringResource(R.string.publish_subtitulo))
-            TextField(
-                value = uiState.subtitulo,
-                onValueChange = { if (it.length <= maxSubtitle) viewModel.actualizarSubtitulo(it) },
-                placeholder = { Text(stringResource(R.string.publish_subtitulo_placeholder)) },
-                modifier = Modifier.fillMaxWidth(),
-                supportingText = {
-                    Text("${uiState.subtitulo.length}/$maxSubtitle")
-                }
-            )
         }
 
         //CONSEJO
@@ -336,18 +322,6 @@ fun Paso1(
                 modifier = Modifier.fillMaxWidth(),
                 supportingText = {
                     Text("${uiState.titulo.length}/$maxTitle")
-                }
-            )
-
-            //SUBTÍTULO CONSEJO
-            LabelRequired(stringResource(R.string.publish_subtitulo))
-            TextField(
-                value = uiState.subtitulo,
-                onValueChange = { if (it.length <= maxSubtitle) viewModel.actualizarSubtitulo(it) },
-                placeholder = { Text(stringResource(R.string.publish_subtitulo_placeholder)) },
-                modifier = Modifier.fillMaxWidth(),
-                supportingText = {
-                    Text("${uiState.subtitulo.length}/$maxSubtitle")
                 }
             )
         }
@@ -491,6 +465,8 @@ fun Paso5(
         uri?.let { viewModel.actualizarImagen(it) }
     }
 
+    val maxSubtitle = 60
+
     Column(verticalArrangement = Arrangement.spacedBy(16.dp)) {
 
         LabelRequired(stringResource(R.string.publish_seleccionar_imagen))
@@ -516,6 +492,7 @@ fun Paso5(
             }
         }
 
+
         Button(
             onClick = { launcher.launch("image/*") },
             modifier = Modifier.fillMaxWidth(),
@@ -526,5 +503,17 @@ fun Paso5(
         ) {
             Text(stringResource(R.string.publish_elegir_imagen))
         }
+
+        //SUBTÍTULO
+        LabelRequired(stringResource(R.string.publish_subtitulo))
+        TextField(
+            value = uiState.subtitulo,
+            onValueChange = { if (it.length <= maxSubtitle) viewModel.actualizarSubtitulo(it) },
+            placeholder = { Text(stringResource(R.string.publish_subtitulo_placeholder)) },
+            modifier = Modifier.fillMaxWidth(),
+            supportingText = {
+                Text("${uiState.subtitulo.length}/$maxSubtitle")
+            }
+        )
     }
 }

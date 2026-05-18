@@ -35,9 +35,9 @@ fun DetailItem(data: DetailUI) {
         }
 
         if (loadError) {
-            //Título si la imagen falla
+            //Subtítulo si la imagen falla
             Text(
-                text = data.titulo,
+                text = data.subtitulo,
                 style = MaterialTheme.typography.bodyLarge,
                 modifier = Modifier
                     .fillMaxWidth()
