@@ -28,6 +28,7 @@ fun DetailPostScreen(
     postId: Long,
     onBack: () -> Unit
 ) {
+
     val viewModel: DetailPostViewModel = viewModel(
         factory = DetailPostViewModelFactory(postId)
     )
