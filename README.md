@@ -89,5 +89,3 @@ util/
 - **SonarQube** (análisis de calidad)
 
 
-
-
